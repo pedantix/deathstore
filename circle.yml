@@ -6,6 +6,11 @@ test:
     - COVERAGE=true bin/rake
 deployment:
   staging:
-    branch: master
+    branch: development
     commands:
       - bin/deploy staging
+
+  production:
+    branch: master
+    commands:
+      - bin/deploy production
