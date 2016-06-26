@@ -9,7 +9,7 @@ feature 'Creating an account' do
     click_on t('pages.home.sign_up')
 
     fill_in 'user_password', with: password
-    fill_in 'user_password_confirmation',  with: password
+    fill_in 'user_password_confirmation', with: password
     fill_form :user, email: email
 
     click_on t('devise.registrations.new.submit')
@@ -62,7 +62,7 @@ feature 'password recover' do
     visit new_user_session_path
     click_on 'Forgot'
 
-    fill_form :user,  email: user.email
+    fill_form :user, email: user.email
     click_on 'Send'
 
     expect(page).to have_text t('devise.passwords.send_instructions')
@@ -74,7 +74,7 @@ feature 'editing user' do
   let(:new_email) { Faker::Internet.email }
   let(:new_password) { Faker::Internet.password }
 
-  before  do
+  before do
     login_as user, scope: :user
     visit root_path
     click_on t('application.top_bar.edit_user')
