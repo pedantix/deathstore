@@ -22,6 +22,8 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 
+gem "devise"
+
 group :development do
   gem "quiet_assets"
   gem "spring"
@@ -53,6 +55,7 @@ group :test do
   gem "simplecov", require: false
   gem "timecop"
   gem "webmock"
+  gem "faker"
 end
 
 group :staging, :production do

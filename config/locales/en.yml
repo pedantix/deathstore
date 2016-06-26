@@ -17,3 +17,9 @@ en:
 
   titles:
     application: Deathstore
+
+  pages:
+    home:
+      sign_up: Sign Up
+      sign_out: Sign Out
+      sign_in: Sign In
