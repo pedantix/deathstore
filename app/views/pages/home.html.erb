@@ -1,0 +1,9 @@
+<div class="callout primary">
+  <div class="row column text-center">
+    <% if user_signed_in? %>
+      <h1>Signed in!</h1>
+    <% else %>
+      <%= link_to t(".sign_up"), new_user_registration_path, class: "large button" %> 
+    <% end %>
+  </div>
+</div>

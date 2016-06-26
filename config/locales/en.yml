@@ -17,3 +17,11 @@ en:
 
   titles:
     application: Deathstore
+  application:
+    top_bar:
+      sign_out: Sign Out
+      sign_in: Sign In
+      edit_user: Account Settings
+  pages:
+    home:
+      sign_up: Sign Up
