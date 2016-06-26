@@ -9,9 +9,10 @@ feature "Creating an account" do
     click_on t("pages.home.sign_up")
 
     fill_in "user_password", with: password
-    fill_form :user, email: email,
-                     password_confirmation: password
-    click_on "Sign up"
+    fill_in "user_password_confirmation",  with: password
+    fill_form :user, email: email
+                     
+    click_on t("devise.registrations.new.submit")
 
     expect(page).to have_link t("application.top_bar.sign_out")
     expect(page).not_to have_link t("pages.home.sign_up")

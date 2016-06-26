@@ -10,7 +10,7 @@
       <% end %>
       <%= f.label :password do %>
         <%= t(".password") %>
-        <%= f.text_field :password, required: false, placeholder: t(".password") %>
+        <%= f.password_field :password, required: false, placeholder: t(".password"), secure: true %>
       <% end %>
       <% if devise_mapping.rememberable? %>
         <%= f.check_box :remember_me, as: :boolean %>
