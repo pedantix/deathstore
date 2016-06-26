@@ -68,3 +68,34 @@ feature "password recover" do
     expect(page).to have_text t("devise.passwords.send_instructions")
   end
 end
+
+feature "editing user" do
+  let(:user) { create :user }
+  let(:new_email) { Faker::Internet.email }
+  let(:new_password) { Faker::Internet.password }
+
+  before  do
+    login_as user, scope: :user
+    visit root_path
+    click_on t("application.top_bar.edit_user")
+  end
+
+  scenario "updating email" do  
+    fill_form :user, email: new_email
+    fill_in "user_current_password", with: user.password
+
+    click_on t("devise.registrations.edit.submit")
+
+    expect(page).to have_text t("devise.registrations.updated")
+  end
+
+  scenario "updating password" do
+    fill_in "user_current_password", with: user.password
+    fill_in "user_password", with: new_password
+    fill_in "user_password_confirmation", with: new_password
+
+    click_on t("devise.registrations.edit.submit")
+
+    expect(page).to have_text t("devise.registrations.updated")
+  end
+end

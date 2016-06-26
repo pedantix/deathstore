@@ -44,6 +44,14 @@ en:
         password_confirmation: Password Confirmation
         submit: Register
         password_placeholder: Password
+      edit:
+        email: Email
+        password: Password
+        password_placeholder: Password
+        password_confirmation: Password Confirmation
+        current_password: Current Password
+        submit: Update Registration
+        password_optional: "optional, leave blank to not change"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
