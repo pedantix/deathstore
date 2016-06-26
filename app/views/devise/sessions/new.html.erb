@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="medium-8  medium-centered columns">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="row column log-in-form">
+      <h2 class="text-center">Log in</h2>
+      <%= f.label :email, 
+        class: (resource.errors[:email].present? ? "error" : nil) do %>
+        <%= t(".email") %>
+        <%= f.text_field :email, required: false, autofocus: true, placeholder: "somebody@example.com" %>
+      <% end %>
+      <%= f.label :password do %>
+        <%= t(".password") %>
+        <%= f.text_field :password, required: false, placeholder: t(".password") %>
+      <% end %>
+      <% if devise_mapping.rememberable? %>
+        <%= f.check_box :remember_me, as: :boolean %>
+        <%= f.label :remember_me, t(".remember_me") %>
+      <% end %>
+    </div>
+
+    <div class="form-actions text-center">
+      <%= f.submit t(".sign_in"), class: "button expanded" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+  </div>
+</div>

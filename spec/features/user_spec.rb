@@ -8,12 +8,12 @@ feature "Creating an account" do
     visit root_path
     click_on t("pages.home.sign_up")
 
+    fill_in "user_password", with: password
     fill_form :user, email: email,
-                     password: password, 
                      password_confirmation: password
     click_on "Sign up"
 
-    expect(page).to have_link t("pages.home.sign_out")
+    expect(page).to have_link t("application.top_bar.sign_out")
     expect(page).not_to have_link t("pages.home.sign_up")
     expect(page).to have_content t("devise.registrations.signed_up")
   end 
@@ -24,13 +24,15 @@ feature "Signing into an account" do
 
   scenario "signing in" do
     visit root_path
-    click_on t("pages.home.sign_in")
+    click_on t("application.top_bar.sign_in")
 
     fill_form :user, email: user.email,
                      password: user.password
-    click_on "Log in"
+    within "form" do
+      click_on t("devise.sessions.new.sign_in")
+    end
 
-    expect(page).to have_link t("pages.home.sign_out")
+    expect(page).to have_link t("application.top_bar.sign_out")
     expect(page).not_to have_link t("pages.home.sign_up")
     expect(page).to have_text t("devise.sessions.signed_in")
   end
@@ -46,8 +48,22 @@ feature "Signing out" do
   scenario "logging out" do
     visit root_path
 
-    click_on t("pages.home.sign_out")
+    click_on t("application.top_bar.sign_out")
 
     expect(page).to have_text t("devise.sessions.signed_out")
+  end
+end
+
+feature "password recover" do
+  let(:user) { create :user }
+
+  scenario "from login" do
+    visit new_user_session_path
+    click_on "Forgot"
+
+    fill_form :user,  email: user.email
+    click_on "Send"
+
+    expect(page).to have_text t("devise.passwords.send_instructions")
   end
 end

@@ -23,6 +23,7 @@ gem "title"
 gem "uglifier"
 
 gem "devise"
+gem 'foundation-rails'
 
 group :development do
   gem "quiet_assets"
@@ -64,6 +65,3 @@ group :staging, :production do
 end
 
 gem 'high_voltage'
-gem 'bourbon', '5.0.0.beta.6'
-gem 'neat', '~> 1.8.0'
-gem 'refills', group: [:development, :test]

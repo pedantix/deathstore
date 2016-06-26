@@ -1,8 +1,9 @@
-
-<% if user_signed_in? %>
-  <%= link_to(t(".sign_out"), destroy_user_session_path, method: :delete) %>
-<% else %>
-  <%= link_to t(".sign_up"), new_user_registration_path %>
-
-  <%= link_to t(".sign_in") , new_user_session_path %>  
-<% end %>
+<div class="callout primary">
+  <div class="row column text-center">
+    <% if user_signed_in? %>
+      <h1>Signed in!</h1>
+    <% else %>
+      <%= link_to t(".sign_up"), new_user_registration_path, class: "large button" %> 
+    <% end %>
+  </div>
+</div>
