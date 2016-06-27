@@ -41,7 +41,7 @@ class DirectivesController < ApplicationController
     params.require(:directive).permit(:content)
   end
 
-  def user 
+  def user
     @user ||= User.find params[:user_id]
   end
 
