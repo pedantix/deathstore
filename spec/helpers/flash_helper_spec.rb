@@ -16,7 +16,7 @@ describe FlashesHelper, type: :helper do
 
   describe "mocked object" do
     let!(:fake_hash) do
-      { fake: :hash }.tap {|fake| flash.hash = fake }
+      { fake: :hash }.tap { |fake| flash.hash = fake }
     end
 
     it "should simulate the interface" do 
