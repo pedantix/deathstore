@@ -22,6 +22,30 @@ en:
       sign_out: Sign Out
       sign_in: Sign In
       edit_user: Account Settings
+      edit_directive: Edit Directive
+      create_directive: Create Directive
+      delete_directive: Delete Directive
   pages:
     home:
       sign_up: Sign Up
+      create_directive: Create Directive
+      delete_directive: Delete Directive
+      edit_directive: Edit Directive
+  directives:
+    form:
+      content: Content
+      content_placeholder: Enter your directives here...
+    new:
+      title: New Directive
+      submit: Create Deathstore Directive
+    edit:
+      title: Edit Directive
+      submit: Update Deathstore Directive
+    destroy:
+      success: "Successfully, deleted directive."
+    create:
+      success: "Successfully, created a new directive."
+      failure: "There was a problem creating the directive."
+    update:
+      success: "Successfully, updated directive."
+      failure: "There was a problem updating the directive."

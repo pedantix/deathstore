@@ -3,4 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_one :directive, dependent: :destroy
+
+  def has_directive?
+    directive.present?
+  end
 end
