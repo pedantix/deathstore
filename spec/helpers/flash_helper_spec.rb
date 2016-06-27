@@ -24,7 +24,6 @@ describe FlashesHelper, type: :helper do
     end
   end
 
-
   describe 'transforming common rails flashes to foundation friendly' do
     let(:alert) { 'alert' }
     let(:error) { 'error' }
@@ -35,7 +34,7 @@ describe FlashesHelper, type: :helper do
       flash.hash[:alert] = alert
       flash.hash[:error] = error
       flash.hash[:notice] = notice
-      flash.hash[:success] =success
+      flash.hash[:success] = success
     end
 
     it 'should map values' do 

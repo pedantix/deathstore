@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'viewing a directive' do
   let(:directive) { create :directive }
   let(:user) { directive.user }
-  
+
   scenario 'When Not Logged In Directive Should Be Visible but not creatable' do
     visit user_directives_path(user_id: user.id)
 
@@ -16,7 +16,7 @@ end
 
 feature 'creating a directive' do
   let(:user) { create :user }
-  let(:content) { Faker::Lorem.paragraph }  
+  let(:content) { Faker::Lorem.paragraph }
 
   before do
     login_as user, scope: :user
@@ -33,7 +33,7 @@ feature 'creating a directive' do
   end
 
   scenario 'blank content' do
-    fill_in 'directive_content', with: ""
+    fill_in 'directive_content', with: ''
     click_on t('directives.new.submit')
 
     expect(page).to have_text t('directives.create.failure')
@@ -53,7 +53,7 @@ feature 'deleting a directive' do
     expect(page).to have_link t('pages.home.create_directive')
   end
 
-  scenario 'deleting directive' do 
+  scenario 'deleting directive' do
     login_as user_with_directive, scope: :user
 
     visit root_path
@@ -80,11 +80,11 @@ feature 'editing a directive' do
     expect(page).to have_link t('pages.home.create_directive')
   end
 
-  scenario 'editing directive' do 
+  scenario 'valid content' do
     login_as user_with_directive, scope: :user
 
     visit root_path
-    
+
     click_on t('pages.home.edit_directive')
 
     fill_in 'directive_content', with: new_content
@@ -92,5 +92,17 @@ feature 'editing a directive' do
 
     expect(page).to have_text t('directives.update.success')
     expect(page).to have_text new_content
+  end
+
+  scenario 'blank content' do
+    login_as user_with_directive, scope: :user
+
+    visit root_path
+
+    click_on t('pages.home.edit_directive')
+    fill_in 'directive_content', with: ''
+    click_on t('directives.edit.submit')
+
+    expect(page).to have_text t('directives.update.failure')
   end
 end
