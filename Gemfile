@@ -23,7 +23,8 @@ gem "title"
 gem "uglifier"
 
 gem "devise"
-gem 'foundation-rails'
+gem "foundation-rails"
+gem "rqrcode", "~> 0.10.1"
 
 group :development do
   gem "quiet_assets"
@@ -41,7 +42,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.4.0"
-  gem 'rspec-retry'
+  gem "rspec-retry"
 end
 
 group :development, :staging do
@@ -65,4 +66,4 @@ group :staging, :production do
   gem "rails_stdout_logging"
 end
 
-gem 'high_voltage'
+gem "high_voltage"
