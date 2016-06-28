@@ -16,6 +16,9 @@
           <p class="callout"><%= current_user.directive.content %></p>
           <%= link_to t(".edit_directive"), edit_user_directives_path(current_user), class: "button expanded large" %>
           <%= link_to t(".delete_directive"), user_directives_path(current_user), class: "button expanded large", method: :delete %>
+
+          <%=  qr_helper %>
+
         </article>
       <% else %>
         <%= link_to t(".create_directive"), new_user_directives_path(current_user), class: "button expanded large" %>
