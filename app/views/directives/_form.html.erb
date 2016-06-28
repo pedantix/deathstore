@@ -1,0 +1,14 @@
+
+<% content_error = directive.errors[:content].present? %>
+<%= f.label :content, 
+  class: (content_error ? "is-invalid-label" : nil) do %>
+  <%= t(".content") %>
+  <%= f.text_area :content, required: false, placeholder: t(".content_placeholder") %>
+
+  <% directive.errors.full_messages_for(:content).each do |mesage| %>
+
+    <%= content_tag :small, mesage , class: "form-error is-visible" %>
+  <% end %>
+<% end %>
+
+
