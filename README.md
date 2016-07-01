@@ -24,8 +24,9 @@ We live in an era when 5th degree friends are alerted on their mobile devices at
 * provide resources to make it easier for laypeople to make and understand healthcare directives, and reduce misunderstanding of advance directive content and implications
 * accomplish the above via an open collaborative framework under the unrestrictive BSD license
 
-### document drafts
+### project drafts
 * [advanced advance directive (open document format)] (directive-templates/template.odt)
+* [QR code directive store - skeleton-alpha prototype](https://deathstore-staging.herokuapp.com/)
 
 ### disclaimer
 * authors/contributors accept no liability for how site/code/directives are used
