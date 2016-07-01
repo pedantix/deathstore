@@ -22,6 +22,10 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 
+gem "devise"
+gem "foundation-rails"
+gem "rqrcode", "~> 0.10.1"
+
 group :development do
   gem "quiet_assets"
   gem "spring"
@@ -38,6 +42,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.4.0"
+  gem "rspec-retry"
 end
 
 group :development, :staging do
@@ -53,6 +58,7 @@ group :test do
   gem "simplecov", require: false
   gem "timecop"
   gem "webmock"
+  gem "faker"
 end
 
 group :staging, :production do
@@ -60,7 +66,4 @@ group :staging, :production do
   gem "rails_stdout_logging"
 end
 
-gem 'high_voltage'
-gem 'bourbon', '5.0.0.beta.6'
-gem 'neat', '~> 1.8.0'
-gem 'refills', group: [:development, :test]
+gem "high_voltage"

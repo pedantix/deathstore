@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="medium-8  medium-centered columns">
+    <%= form_for(directive, url: user_directives_path(current_user), html: { method: :post }) do |f| %>
+      <h2 class="text-centered"><%= t(".title") %></h2>
+      <%= render 'form', f: f %>
+      <%= f.submit t(".submit"), class: "button expanded" %>
+    <% end %>
+  </div>
+</div>

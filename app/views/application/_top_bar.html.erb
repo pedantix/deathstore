@@ -1,0 +1,25 @@
+<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="main-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <%= link_to root_path do %>
+        <li class="menu-text">Death Store </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+      <% if user_signed_in? %>
+        <li><%= link_to(t(".edit_user"), edit_user_registration_path) %></li>
+
+        <li><%= link_to(t(".sign_out"), destroy_user_session_path, method: :delete) %></li>
+      <% else %>
+        <li><%= link_to t(".sign_in") , new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

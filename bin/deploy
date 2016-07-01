@@ -7,6 +7,7 @@ set -e
 branch="$(git symbolic-ref HEAD --short)"
 target="${1:-staging}"
 
-git push "$target" "$branch:master"
+git push -f "$target" "$branch:master"
+heroku pg:backups capture --remote "$target"
 heroku run rake db:migrate --exit-code --remote "$target"
 heroku restart --remote "$target"

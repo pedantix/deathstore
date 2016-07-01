@@ -1,0 +1,31 @@
+<div class="callout primary">
+  <div class="row column text-center">
+    <% if user_signed_in? %>
+      <h1>Signed in!</h1>
+    <% else %>
+      <%= link_to t(".sign_up"), new_user_registration_path, class: "large button" %> 
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="medium-8 medium-centered columns">
+    <% if user_signed_in? %>
+      <% if current_user.has_directive? %>
+        <article>
+          <p class="callout"><%= current_user.directive.content %></p>
+          <%= link_to t(".edit_directive"), edit_user_directives_path(current_user), class: "button expanded large" %>
+          <%= link_to t(".delete_directive"), user_directives_path(current_user), class: "button expanded large", method: :delete %>
+
+          <%=  qr_helper %>
+
+        </article>
+      <% else %>
+        <%= link_to t(".create_directive"), new_user_directives_path(current_user), class: "button expanded large" %>
+      <% end %>
+
+    <% else %>    
+      <p>Place holder for mission statement</p>
+    <% end %>
+  </div>
+</div>

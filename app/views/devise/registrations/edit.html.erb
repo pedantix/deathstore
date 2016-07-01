@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="medium-8  medium-centered columns">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+    <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+    <% email_error = resource.errors[:email].present? %>
+    <%= f.label :email, 
+    class: (email_error ? "is-invalid-label" : nil) do %>
+
+    <%= t(".email") %>
+    <%= f.text_field :email, required: false, autofocus: true, placeholder: "somebody@example.com" %>
+
+    <% resource.errors.full_messages_for(:email).each do |mesage| %>
+
+    <%= content_tag :small, mesage , class: "form-error is-visible" %>
+    <% end %>
+    <% end %>
+
+    <% password_error = resource.errors[:password].present? %>
+    <%= f.label :password, 
+    class: (password_error ? "is-invalid-label" : nil) do %>
+    <%= t(".password") %>
+    <%= f.password_field :password, required: false, placeholder: t(".password_placeholder") %>
+    
+    <%= content_tag(:p, t(".password_optional"), class: "help-text") %>
+    <% resource.errors.full_messages_for(:password).each do |mesage| %>
+
+    <%= content_tag :small, mesage , class: "form-error is-visible" %>
+    <% end %>
+    <% end %>
+
+    <% password_confirmation_error = resource.errors[:password_confirmation].present? %>
+    <%= f.label :password_confirmation, 
+    class: (password_confirmation_error ? "is-invalid-label" : nil) do %>
+    <%= t(".password_confirmation") %>
+    <%= f.password_field :password_confirmation, required: false, placeholder: t(".password_placeholder") %>
+    <%= content_tag(:p, t(".password_optional"), class: "help-text") %>
+
+    <% resource.errors.full_messages_for(:password_confirmation).each do |mesage| %>
+
+    <%= content_tag :small, mesage , class: "form-error is-visible" %>
+    <% end %>
+    <% end %>
+
+    <% current_password_error = resource.errors[:current_password].present? %>
+    <%= f.label :current_password, 
+    class: (current_password_error ? "is-invalid-label" : nil) do %>
+    <%= t(".current_password") %>
+    <%= f.password_field :current_password, required: false, placeholder: t(".password_placeholder") %>
+
+    <% resource.errors.full_messages_for(:current_password).each do |mesage| %>
+
+    <%= content_tag :small, mesage , class: "form-error is-visible" %>
+    <% end %>
+    <% end %>
+    <%= content_tag(:p, "we need your current password to confirm your changes", class: "help-text") %>
+
+    <div class="form-actions text-center">
+      <%= f.submit t(".submit"), class: "button expanded" %>
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+    </div>
+    <% end %>
+  </div>
+</div>
