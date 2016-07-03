@@ -10,7 +10,8 @@ module ApplicationHelper
   end
 
   MARKDOWN_RENDERER = Redcarpet::Markdown.
-                                 new(Redcarpet::Render::HTML, autolink: true, tables: true)
+                      new(Redcarpet::Render::HTML,
+                      autolink: true, tables: true)
 
   def markdown(text)
     MARKDOWN_RENDERER.render(text).html_safe
