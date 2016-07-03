@@ -25,6 +25,7 @@ gem "uglifier"
 gem "devise"
 gem "foundation-rails"
 gem "rqrcode", "~> 0.10.1"
+gem "redcarpet"
 
 group :development do
   gem "quiet_assets"
