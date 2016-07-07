@@ -1,5 +1,6 @@
-# deathstore.org
+# deathstore.org ([github] (https://github.com/pedantix/deathstore))
 **free and open source advanced advance directives**
+
 >I would like to die peacefully with Thomas Tallis on my iPod before the disease takes me over and I hope that will not be for quite some time to come, because if I knew that I could die at any time I wanted, then suddenly every day would be as precious as a million pounds. If I knew that I could die, I would live. My life, my death, my choice.
 
 -Terry Pratchett
@@ -25,12 +26,10 @@ We live in an era when 5th degree friends are alerted on their mobile devices at
 * accomplish the above via an open collaborative framework under the unrestrictive BSD license
 
 ### project drafts
+* [github page] (https://github.com/pedantix/deathstore) (also see [heroku readme] (heroku-readme.md))
 * [advanced advance directive (open document format)] (directive-templates/template.odt)
 * [QR code directive store - skeleton-alpha prototype](https://deathstore-staging.herokuapp.com/)
 
 ### disclaimer
 * authors/contributors accept no liability for how site/code/directives are used
 * code/documents associated with this project presently intended only for research (non-clinical) purposes
-
-### links
-* [heroku readme] (heroku-readme.md)
