@@ -26,8 +26,8 @@ We live in an era when 5th degree friends are alerted on their mobile devices at
 * accomplish the above via an open collaborative framework under the unrestrictive BSD license
 
 ### project drafts
-* [github page] (https://github.com/pedantix/deathstore) (also see [heroku readme] (heroku-readme.md))
-* [advanced advance directive (open document format)] (directive-templates/template.odt)
+* [github page] (https://github.com/pedantix/deathstore) (also see [heroku readme] (https://github.com/pedantix/deathstore/blob/development/heroku-readme.md))
+* [advanced advance directive (open document format)] (https://github.com/pedantix/deathstore/blob/development/directive-templates/template.odt)
 * [QR code directive store - skeleton-alpha prototype](https://deathstore-staging.herokuapp.com/)
 
 ### disclaimer
