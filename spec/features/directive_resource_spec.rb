@@ -11,8 +11,6 @@ feature "viewing a directive" do
 
     expect(page).not_to have_link t("application.top_bar.edit_directive")
     expect(page).not_to have_link t("application.top_bar.create_directive")
-
-
     expect(page).not_to have_link t("pages.home.download_directive"), href: qr_code_user_directives_path(user)
   end
 
@@ -20,7 +18,7 @@ feature "viewing a directive" do
     visit root_path
     click_on "Sign In"
     fill_form :user, email: user.email, password: user.password
-    
+
     within "form" do
       click_on "Sign In"
     end
@@ -28,7 +26,8 @@ feature "viewing a directive" do
     expect(page).to have_text directive.content
 
     expect(page).to have_link t("application.top_bar.edit_directive")
-    expect(page).to have_link t("pages.home.download_directive"), href: qr_code_user_directives_path(user)
+    expect(page).to have_link t("pages.home.download_directive"), 
+                              href: qr_code_user_directives_path(user)
   end
 end
 
