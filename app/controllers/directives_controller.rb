@@ -37,10 +37,9 @@ class DirectivesController < ApplicationController
   end
 
   def qr_code
-    #render text: qr_helper(user), status: :ok
-    svg_file = Tempfile.new(['qr_code', '.svg'])
+    svg_file = Tempfile.new(["qr_code", ".svg"])
     svg_file.write qr_helper(user)
-    send_file svg_file, type: "image/svg+xml", 
+    send_file svg_file, type: "image/svg+xml",
                         x_sendfile: true
   end
 
