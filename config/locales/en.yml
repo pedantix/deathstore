@@ -31,6 +31,7 @@ en:
       create_directive: Create Directive
       delete_directive: Delete Directive
       edit_directive: Edit Directive
+      download_directive: Download
   directives:
     form:
       content: Content

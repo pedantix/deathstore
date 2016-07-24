@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def qr_helper
-    url = user_directives_url(current_user)
+  def qr_helper(user = current_user)
+    url = user_directives_url(user)
     qrcode = RQRCode::QRCode.new(url)
 
 

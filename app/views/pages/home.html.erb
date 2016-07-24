@@ -14,6 +14,7 @@
       <% if current_user.has_directive? %>
         <article>
           <p class="callout"><%= current_user.directive.content %></p>
+          <%= link_to t(".download_directive"), qr_code_user_directives_path(current_user), class: "button expanded large" %>
           <%= link_to t(".edit_directive"), edit_user_directives_path(current_user), class: "button expanded large" %>
           <%= link_to t(".delete_directive"), user_directives_path(current_user), class: "button expanded large", method: :delete %>
 

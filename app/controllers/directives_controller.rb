@@ -1,6 +1,7 @@
 class DirectivesController < ApplicationController
   helper_method :directive
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :qr_code]
+  include ApplicationHelper
 
   def show
   end
@@ -33,6 +34,14 @@ class DirectivesController < ApplicationController
     directive.destroy!
     flash[:success] = t(".success")
     redirect_to root_path
+  end
+
+  def qr_code
+    #render text: qr_helper(user), status: :ok
+    svg_file = Tempfile.new(['qr_code', '.svg'])
+    svg_file.write qr_helper(user)
+    send_file svg_file, type: "image/svg+xml", 
+                        x_sendfile: true
   end
 
   private
