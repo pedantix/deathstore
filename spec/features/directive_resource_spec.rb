@@ -12,7 +12,7 @@ feature "viewing a directive" do
     expect(page).not_to have_link t("application.top_bar.edit_directive")
     expect(page).not_to have_link t("application.top_bar.create_directive")
     expect(page).not_to have_link t("pages.home.download_directive"),
-                        href: qr_code_user_directives_path(user)
+                                  href: qr_code_user_directives_path(user)
   end
 
   scenario "When viewing your own directive" do
